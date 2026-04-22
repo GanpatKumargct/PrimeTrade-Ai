@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:15-alpine
     container_name: primetrade_db
-    restart: always
+
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: adminpassword
@@ -19,7 +19,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: primetrade_api
-    restart: always
+
     environment:
       - DATABASE_URL=postgresql://admin:adminpassword@db:5432/primetrade_app
       - SECRET_KEY=supersecretkey12345

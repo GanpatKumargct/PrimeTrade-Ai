@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8 # 8 days
     # Allow overriding via environment or .env file
-    DATABASE_URL: str = "postgresql://admin:adminpassword@localhost:5432/primetrade_app"
+    DATABASE_URL: str = "postgresql://admin:adminpassword@127.0.0.1:5432/primetrade_app"
     
     model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True, extra="ignore")
 
